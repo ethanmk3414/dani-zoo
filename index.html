@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#ff8fc7" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Dani Zoo" />
+  <title>Dani Zoo</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="icon.svg" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="hero card">
+      <div class="top-row">
+        <div>
+          <p class="eyebrow">Dani’s daily tiny friend</p>
+          <h1 id="appTitle">For Dani</h1>
+        </div>
+        <button id="settingsBtn" class="icon-btn" aria-label="Open settings">⚙️</button>
+      </div>
+
+      <div class="date-pill" id="datePill"></div>
+
+      <div class="animal-stage" id="animalStage">
+        <div class="sparkle one">✦</div>
+        <div class="sparkle two">♡</div>
+        <div class="sparkle three">✧</div>
+        <div class="ground"></div>
+        <div id="bow" class="bow">🎀</div>
+        <div id="animal" class="animal">🐻</div>
+        <div id="accessory" class="accessory">✨</div>
+      </div>
+
+      <h2 id="animalName">Bear Buddy</h2>
+      <p id="dailyMessage" class="message"></p>
+
+      <div class="button-row">
+        <button id="newNoteBtn">New nice thing</button>
+        <button id="saveFavBtn" class="secondary">Save favorite</button>
+      </div>
+    </section>
+
+    <section class="card ethan-card">
+      <h3>Message from Ethan</h3>
+      <p id="fromMeLine">Dani, you make every day better.</p>
+    </section>
+
+    <section class="stats-grid">
+      <div class="mini-card"><span id="streakCount">1</span><p>day streak</p></div>
+      <div class="mini-card"><span id="unlockCount">0</span><p>unlocked</p></div>
+      <div class="mini-card"><span id="comboCount">100+</span><p>cute combos</p></div>
+    </section>
+
+    <section class="card">
+      <h3>Customize today’s animal</h3>
+      <p class="small">Mix animals, bows, colors, accessories, moods, backgrounds, and message styles. There are thousands of combinations.</p>
+      <div class="grid-controls">
+        <label>Animal<select id="animalSelect"></select></label>
+        <label>Bow<select id="bowSelect"></select></label>
+        <label>Color<select id="colorSelect"></select></label>
+        <label>Accessory<select id="accessorySelect"></select></label>
+        <label>Mood<select id="moodSelect"></select></label>
+        <label>Background<select id="bgSelect"></select></label>
+        <label>Message style<select id="styleSelect"></select></label>
+        <label>Nickname<input id="nicknameInput" placeholder="baby, princess, love..." /></label>
+      </div>
+      <button id="randomizeBtn" class="wide">Random cute combo</button>
+    </section>
+
+    <section class="card">
+      <h3>Dani’s favorites</h3>
+      <div id="favoritesList" class="favorites"></div>
+    </section>
+  </main>
+
+  <dialog id="settingsDialog">
+    <form method="dialog" class="settings-card">
+      <h2>Make it personal</h2>
+      <label>Her name<input id="herNameInput" placeholder="Dani" /></label>
+      <label>Your name<input id="yourNameInput" placeholder="Ethan" /></label>
+      <label>Personal line from you<textarea id="personalLineInput" rows="3">you make every day better.</textarea></label>
+      <label>Your own compliment<textarea id="customComplimentInput" rows="3" placeholder="Type a sweet custom note..."></textarea></label>
+      <button id="addCustomCompliment" type="button">Add custom compliment</button>
+      <div class="button-row right">
+        <button value="cancel" class="secondary">Close</button>
+        <button id="saveSettings" value="default">Save</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
